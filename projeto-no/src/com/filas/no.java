@@ -1,19 +1,15 @@
 package com.filas;
 
-public class no {
+public class No{
+
     private Object object;
-    private no refNo;
+    private No refNo;
 
-    public no () {
-
+    public No(){
     }
 
-    // public no(String object) {
-    //     this((Object)object);
-    // }
-
-    public no (Object object) {
-        refNo.object = null;
+    public No(Object object){
+        this.refNo = null;
         this.object = object;
     }
 
@@ -25,19 +21,18 @@ public class no {
         this.object = object;
     }
 
-    public no getRefNo() {
+    public No getRefNo() {
         return refNo;
     }
 
-    public void setRefNo(no refNo) {
+    public void setRefNo(No refNo) {
         this.refNo = refNo;
     }
 
     @Override
     public String toString() {
-        return "no{" + 
-                "objetct = '" + object + "'\'" +
-                "}"; 
+        return "No{" +
+                "object=" + object +
+                '}';
     }
-
 }

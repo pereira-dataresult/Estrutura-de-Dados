@@ -1,17 +1,29 @@
 package com.filas;
 
-public class main {
+public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
-        fila minhFila = new fila();
+        Fila minhaFila = new Fila();
 
-        minhFila.enqueue(new no("primeiro"));
-        minhFila.enqueue(new no ("segundo"));
-        minhFila.enqueue(new no ("terceiro"));
-        minhFila.enqueue(new no ("quarto"));
+        minhaFila.enqueue(new No("primeiro"));
+        minhaFila.enqueue(new No("segundo"));
+        minhaFila.enqueue(new No("terceiro"));
+        minhaFila.enqueue(new No("quarto"));
 
-        System.out.println(minhFila);
+        System.out.println(minhaFila);
+
+        System.out.println(minhaFila.dequeue());
+
+        System.out.println(minhaFila);
+
+        minhaFila.enqueue(new No("ultimo"));
+
+        System.out.println(minhaFila);
+
+        System.out.println(minhaFila.first());
+
+        System.out.println(minhaFila);
     }
-    
+
 }

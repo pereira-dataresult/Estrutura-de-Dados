@@ -1,76 +1,73 @@
 package com.filas;
 
-import com.nopilha.no;
+public class Fila {
 
-public class fila {
+    private No refNoEntradaFila;
 
-    private no refNoEntradaFila;
-
-    public fila() {
+    public Fila() {
         this.refNoEntradaFila = null;
     }
 
-    public boolean isEmpty () {
-        return refNoEntradaFila == null? true : false;
-    }
-
-    public void enqueue(no novoNo) {
+    public void enqueue(No novoNo){
         novoNo.setRefNo(refNoEntradaFila);
         refNoEntradaFila = novoNo;
     }
 
-    public no first() {
-        if(!this.isEmpty()) {
-            no primeiroNo = refNoEntradaFila;
-            while (true) {
-                if(primeiroNo.getRefNo() != null) {
+    public No first(){
+        if(!this.isEmpty()){
+            No primeiroNo = refNoEntradaFila;
+            while (true){
+                if(primeiroNo.getRefNo() != null){
                     primeiroNo = primeiroNo.getRefNo();
-                } else {
+                }else{
                     break;
                 }
             }
+            return primeiroNo;
         }
         return null;
     }
 
-    public no dequeue() {
-        if(!this.isEmpty()) {
-            no primeiroNo = refNoEntradaFila;
-            no noAuxiliar = refNoEntradaFila;
-            while (true) {
-                if(primeiroNo.getRefNo() != null) {
+    public No dequeue(){
+        if(!this.isEmpty()){
+            No primeiroNo = refNoEntradaFila;
+            No noAuxiliar = refNoEntradaFila;
+            while (true){
+                if(primeiroNo.getRefNo() != null){
                     noAuxiliar = primeiroNo;
                     primeiroNo = primeiroNo.getRefNo();
-                } else {
+                }else{
                     noAuxiliar.setRefNo(null);
                     break;
                 }
             }
+            return primeiroNo;
         }
         return null;
+    }
+
+    public boolean isEmpty(){
+        return refNoEntradaFila == null? true : false;
     }
 
     @Override
     public String toString() {
         String stringRetorno = "";
-        no noAuxiliar  = refNoEntradaFila;
+        No noAuxiliar = refNoEntradaFila;
 
-        if(refNoEntradaFila != null) {
-            while (true) {
-                stringRetorno += "[No{objeto=" + noAuxiliar.getRefNo() + "}]--->";
-                if(noAuxiliar.getRefNo() != null) {
+        if(refNoEntradaFila != null){
+            while (true){
+                stringRetorno += "[No{objeto=" + noAuxiliar.getObject() + "}]--->";
+                if(noAuxiliar.getRefNo() != null){
                     noAuxiliar = noAuxiliar.getRefNo();
-                } else {
+                }else{
                     stringRetorno += "null";
                     break;
-                }               
-
+                }
             }
-        } else {
+        }else{
             stringRetorno = "null";
         }
-
         return stringRetorno;
     }
-    
 }
