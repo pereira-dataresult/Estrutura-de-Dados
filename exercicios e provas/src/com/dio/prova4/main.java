@@ -1,4 +1,4 @@
-package com.dio;
+package com.dio.prova4;
 
 import java.util.Scanner;
 
